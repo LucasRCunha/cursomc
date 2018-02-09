@@ -31,6 +31,13 @@ public abstract class Pagamento implements Serializable{
 	public Pagamento () {
 		
 	}
+	
+	public Pagamento(Integer id, EstadoPagamento estado, Pedido pedido) {
+		super();
+		this.id = id;
+		this.estado = (estado==null) ? null :estado.getCod();
+		this.pedido = pedido;
+	}
 
 	@Override
 	public int hashCode() {
@@ -81,12 +88,7 @@ public abstract class Pagamento implements Serializable{
 		this.pedido = pedido;
 	}
 
-	public Pagamento(Integer id, EstadoPagamento estado, Pedido pedido) {
-		super();
-		this.id = id;
-		this.estado = estado.getCod();
-		this.pedido = pedido;
-	}
+	
 
 
 	
